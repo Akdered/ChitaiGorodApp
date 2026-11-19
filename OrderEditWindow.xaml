@@ -1,0 +1,40 @@
+<Window x:Class="ChitaiGorodApp.OrderEditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Добав / редактирование заказа" Height="450" Width="500"
+        WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
+    <StackPanel Margin="20">
+        <TextBlock Text="Артикул / номер заказа:"/>
+        <TextBox x:Name="OrderNumBox" IsReadOnly="True" Background="#EEEEEE" Margin="0,0,0,8"/>
+        <TextBlock Text="Статус заказа:"/>
+        <ComboBox x:Name="StatusBox" Margin="0,0,0,8"/>
+        <TextBlock Text="Адрес пункта выдачи:"/>
+        <ComboBox x:Name="PickupBox" Margin="0,0,0,8"/>
+        <TextBlock Text="Клиент:"/>
+        <ComboBox x:Name="ClientBox" Margin="0,0,0,8"/>
+
+        <TextBlock Text="Код для получения:"/>
+        <TextBox x:Name="CodeBox" Margin="0,0,0,8"/>
+
+        <Grid Margin="0,0,0,15">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0">
+                <TextBlock Text="Дата заказа:"/>
+                <DatePicker x:Name="OrderDatePicker"/>
+            </StackPanel>
+            <StackPanel Grid.Column="2">
+                <TextBlock Text="Дата выдачи (доставки):"/>
+                <DatePicker x:Name="DeliveryDatePicker"/>
+            </StackPanel>
+        </Grid>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="Сохранить" Click="SaveBtn_Click" Margin="0,0,10,0"/>
+            <Button Content="Назад" Background="#ABCFCE" Foreground="Black" Click="CancelBtn_Click"/>
+        </StackPanel>
+    </StackPanel>
+</Window>
